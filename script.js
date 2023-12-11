@@ -5,19 +5,21 @@ function mincost(arr)
 	arr.sort(function(a,b){
 		return a-b;
 	});
-	let sum2=0;
-	let n=arr.length;
-	// for(let i=0;i<n;i+=2){
-	// 	let sum1=0;
-	// 	sum1=arr[i]+arr[i-1];
-	// 	sum2+=sum1;
-	// }
-	// if(n%2!==0) sum2+=arr[n-1];
-	
-	let res=arr.reduce(function(prev,current){
-		return prev+current;
-	})
-   return res;
+   console.log(arr);
+   let x=[];
+   let y=0;
+	let n=arr.length;	
+	let res=arr.reduce(function(p,c){
+		x[y]=p+c;
+      y++;
+      return p+c;
+	});
+   console.log(x);
+   let sum1=0;
+   for(let i=0;i<x.length;i++){
+      sum1+=x[i];
+   }
+   return sum1;
 }
 
 module.exports=mincost;
